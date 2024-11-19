@@ -82,96 +82,46 @@ fun MyLayout() {
 
             Row(modifier = Modifier.fillMaxWidth())
             {
-                Box(
-                    modifier = Modifier.padding(10.dp, 0.dp),
-                    contentAlignment = Alignment.Center
-                )
+                for(i in 1..3)
                 {
-                    Text(
-                        text = "Opcion 1",
-                        style = TextStyle(
-                            color = Color.Gray,
-                            fontSize = 20.sp,
-                            fontFamily = FontFamily.SansSerif
-                        )
+                    Box(
+                        modifier = Modifier.padding(10.dp, 0.dp),
+                        contentAlignment = Alignment.Center
                     )
-                }
-
-                Box(
-                    modifier = Modifier.padding(10.dp, 0.dp),
-                    contentAlignment = Alignment.Center
-                ){
-                    Text(
-                        text = "Opcion 2",
-                        style = TextStyle(
-                            color = Color.Gray,
-                            fontSize = 20.sp,
-                            fontFamily = FontFamily.SansSerif
-                        )
-                    )
-                }
-
-                Box(
-                    modifier = Modifier.padding(10.dp, 0.dp),
-                    contentAlignment = Alignment.Center
-                ){
-                    Text(
-                        text = "Opcion 3",
-                        style = TextStyle(
-                            color = Color.Gray,
-                            fontSize = 20.sp,
-                            fontFamily = FontFamily.SansSerif
-                        )
-                    )
+                    {
+                        MyText("Opcion $i")
+                    }
                 }
             }
 
             Row(modifier = Modifier.fillMaxWidth()
                 .border(BorderStroke(2.dp, Color.Blue)))
             {
-                Box(
-                    modifier = Modifier.padding(20.dp, 5.dp),
-                    contentAlignment = Alignment.Center
-                )
+                for(i in 1..3)
                 {
-                    Text(
-                        text = "Texto 1",
-                        style = TextStyle(
-                            color = Color.Gray,
-                            fontSize = 20.sp,
-                            fontFamily = FontFamily.SansSerif
-                        )
+                    Box(
+                        modifier = Modifier.padding(20.dp, 5.dp),
+                        contentAlignment = Alignment.Center
                     )
+                    {
+                        MyText("Texto $i")
+                    }
                 }
 
-                Box(
-                    modifier = Modifier.padding(20.dp, 5.dp),
-                    contentAlignment = Alignment.Center
-                ){
-                    Text(
-                        text = "Texto 2",
-                        style = TextStyle(
-                            color = Color.Gray,
-                            fontSize = 20.sp,
-                            fontFamily = FontFamily.SansSerif
-                        )
-                    )
-                }
-
-                Box(
-                    modifier = Modifier.padding(20.dp, 5.dp),
-                    contentAlignment = Alignment.Center
-                ){
-                    Text(
-                        text = "Texto 3",
-                        style = TextStyle(
-                            color = Color.Gray,
-                            fontSize = 20.sp,
-                            fontFamily = FontFamily.SansSerif
-                        )
-                    )
-                }
             }
         }
     }
+}
+
+@Composable
+fun MyText(texto: String)
+{
+    Text(
+        text = texto,
+        style = TextStyle(
+            color = Color.Gray,
+            fontSize = 20.sp,
+            fontFamily = FontFamily.SansSerif
+        )
+    )
 }
