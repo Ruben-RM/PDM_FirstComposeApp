@@ -22,6 +22,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -33,9 +34,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MyFirstComposeAppTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    MyLayout()
-                }
+                MyLayout()
             }
         }
     }
@@ -49,36 +48,30 @@ fun MyLayout() {
             modifier = Modifier.fillMaxSize()
         )
         {
-            Box(
+            Text(
+                text = "Titulo",
                 modifier = Modifier.fillMaxWidth()
                     .padding(0.dp, 10.dp),
-                contentAlignment = Alignment.Center
-            ){
-                Text(
-                    text = "Titulo",
-                    style = TextStyle(
-                        color = Color.Gray,
-                        fontSize = 50.sp,
-                        fontWeight = FontWeight.Bold,
-                        fontFamily = FontFamily.SansSerif
-                    )
+                style = TextStyle(
+                    color = Color.Gray,
+                    fontSize = 50.sp,
+                    fontWeight = FontWeight.Bold,
+                    fontFamily = FontFamily.SansSerif,
+                    textAlign = TextAlign.Center
                 )
-            }
+            )
 
-            Box(
+            Text(
+                text = "Subtitulo",
                 modifier = Modifier.fillMaxWidth(),
-                contentAlignment = Alignment.Center
-            ){
-                Text(
-                    text = "Subtitulo",
-                    style = TextStyle(
-                        color = Color.Gray,
-                        fontSize = 30.sp,
-                        fontWeight = FontWeight.Bold,
-                        fontFamily = FontFamily.SansSerif
-                    )
+                style = TextStyle(
+                    color = Color.Gray,
+                    fontSize = 30.sp,
+                    fontFamily = FontFamily.SansSerif,
+                    textAlign = TextAlign.Center
                 )
-            }
+            )
+
 
             Row(modifier = Modifier.fillMaxWidth())
             {
